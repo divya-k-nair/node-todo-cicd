@@ -3,12 +3,14 @@ pipeline{
     stages{
         stage("Code Clone"){
             steps{
+                echo "code clone stage"
                 git url: "https://github.com/divya-k-nair/node-todo-cicd", branch: "master"
                 
             }
         }
         stage("Code Build and Test"){
             steps{
+                 echo "code Build and Test stage"
                 sh "docker build -t node-app ."
             }
         }
